@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34;
+            color: #fff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: #3b3f47;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        #clock {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <h1>Digital Clock</h1>
+        <div id="clock">00:00:00 AM</div>
+    </div>
+
 </body>
+
+<script>
+
+</script>
+
 </html>
