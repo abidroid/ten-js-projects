@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BG Image Change</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -21,7 +22,7 @@
             padding-bottom: 20px;
         }
 
-        .box{
+        .box {
             width: 200px;
             border-radius: 20px;
             overflow: hidden;
@@ -32,16 +33,50 @@
         }
     </style>
 </head>
+
 <body>
-    
+
     <main>
-        <div class="box1 box"><img src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="img1" srcset=""></div>
-        <div class="box2 box"><img src="https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="img2" srcset=""></div>
-        <div class="box3 box"><img src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="img3" srcset=""></div>
+        <div class="box1 box"><img
+                src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="img1" srcset=""></div>
+        <div class="box2 box"><img
+                src="https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="img2" srcset=""></div>
+        <div class="box3 box"><img
+                src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="img3" srcset=""></div>
     </main>
 </body>
 
 <script>
-    
+    const body = document.querySelector('body');
+
+    body.style.backgroundImage = 'url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1200")';
+
+    const boxes = document.querySelectorAll('.box');
+    console.log(boxes);
+
+    function changeBGImage(imageUrl) {
+        body.style.backgroundImage = `url(${imageUrl})`;
+
+    }
+
+
+    boxes.forEach(box => {
+
+        const image = box.querySelector('img');
+        const imageUrl = image.getAttribute('src');
+        
+        //const imgUrl = document.querySelector(box);
+        console.log(box.innerHTML);
+        
+        box.addEventListener('mouseenter', () => changeBGImage(imageUrl))
+        
+    });
+
+
+
 </script>
+
 </html>
