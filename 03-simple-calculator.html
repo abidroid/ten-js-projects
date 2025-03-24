@@ -36,6 +36,7 @@
             color: #fff;
             text-align: center;
         }
+
         input {
             height: 50px;
         }
@@ -45,6 +46,7 @@
             gap: 10px;
             justify-content: space-between;
         }
+
         .btn {
             width: 50px;
             height: 50px;
@@ -67,8 +69,8 @@
 
             <h1 class="heading">Simple Calculator</h1>
 
-            <input type="text" id="firstNumber" placeholder="First Number">
-            <input type="text" id="secondNumber" placeholder="Second Number">
+            <input type="number" id="firstNumber" placeholder="First Number">
+            <input type="number" id="secondNumber" placeholder="Second Number">
 
             <div class="button-row">
 
@@ -87,16 +89,51 @@
 <script>
     const textFieldOne = document.getElementById('firstNumber');
     const textFieldTwo = document.getElementById('secondNumber');
+    const result = document.getElementById('result');
 
+    const buttons = document.querySelectorAll('.btn');
+    //console.log(buttons);
 
     function calculate(operation) {
+
         let num1 = textFieldOne.value;
         let num2 = textFieldTwo.value;
 
-        console.log(num1);
+        if( num1 ===  ''){
+            alert('Please provide number 1')
+            return;
+        }
+
+        if( num2 == ''){
+            alert('Please provide number 2')
+        }
+
+        console.log(operation);
+
+        switch(operation){
+            case '+':
+
+            break;
+            case '-':
+
+            break;
+        }
         
+      
+
+        // console.log(num1);
+
     }
 
-    document.getElementById('btnC').addEventListener('click', calculate);
+    buttons.forEach(
+        (button) => {
+            button.addEventListener('click', () => calculate(button.innerText));
+
+        }
+
+    );
+
+    //document.getElementById('btnC').addEventListener('click', calculate);
 </script>
+
 </html>
