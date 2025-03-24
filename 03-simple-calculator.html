@@ -99,41 +99,53 @@
         let num1 = textFieldOne.value;
         let num2 = textFieldTwo.value;
 
-        if( num1 ===  ''){
-            alert('Please provide number 1')
+        if (num1 === '') {
+            alert('Please provide number 1');
             return;
         }
 
-        if( num2 == ''){
-            alert('Please provide number 2')
+        if (num2 == '') {
+            alert('Please provide number 2');
+            return;
         }
 
-        console.log(operation);
 
-        switch(operation){
+        let n1 = parseFloat(num1);
+        let n2 = parseFloat(num2);
+
+        let output;
+
+        switch (operation) {
             case '+':
-
-            break;
+                output = n1 + n2;
+                break;
             case '-':
+                output = n1 - n2;
+                break;
+            case '*':
+                output = n1 * n2;
+                break;
+            case '/':
+                output = n1 / n2;
+                break;
+            case 'C':
+                textFieldOne.value = '';
+                textFieldTwo.value = '';
+                output = 'Result';
+                break;
+            default:
 
-            break;
         }
-        
-      
 
-        // console.log(num1);
-
+        result.innerText = output;
     }
 
     buttons.forEach(
         (button) => {
             button.addEventListener('click', () => calculate(button.innerText));
-
         }
-
     );
 
-    //document.getElementById('btnC').addEventListener('click', calculate);
 </script>
 
 </html>
