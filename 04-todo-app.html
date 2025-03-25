@@ -35,6 +35,31 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding: 20px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1b0404;
+            padding: 20px;
+
+        }
+
+        .top #textField {
+
+            height: 40px;
+            
+
+        }
+
+        .top .btn {
+            height: 40px;
+            padding: 0 20px;
+            background-color: #65985f;
+            color: white;
+            border-radius: 10px;
+
         }
     </style>
 </head>
@@ -47,7 +72,23 @@
     <main>
         <div class="container">
             <section class="top">
-                <!-- heading-->
+                <!-- left-->
+
+                <div class="left">
+                    <input type="text" id="textField" placeholder="Todo Name">
+                </div>
+                <div class="right">
+                    <button class="btn">Save</button>
+                </div>
+            </section>
+
+            <section class="todos-container">
+                <div class="todo-component">
+                    <div class="todo-left-component">
+                        <input type="checkbox" name="done" id="done">
+                        
+                    </div>
+                </div>
             </section>
         </div>
     </main>
