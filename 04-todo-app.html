@@ -31,7 +31,7 @@
         .container {
             width: 70%;
             min-height: 100vh;
-            background-color: #452323;
+            /* background-color: #452323; */
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -64,6 +64,12 @@
 
         }
 
+        .todos-container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
         .todo-component {
             background-color: #f2d9d9;
             padding: 10px;
@@ -107,6 +113,27 @@
             </section>
 
             <section class="todos-container">
+
+                <div class="todo-component">
+                    <div class="todo-left-component">
+                        <input type="checkbox" name="done" id="done">
+                        <span class="todo-name">coding</span>
+                    </div>
+
+                    <button class="btn-delete">Delete</button>
+
+                </div>
+
+                <div class="todo-component">
+                    <div class="todo-left-component">
+                        <input type="checkbox" name="done" id="done">
+                        <span class="todo-name">coding</span>
+                    </div>
+
+                    <button class="btn-delete">Delete</button>
+
+                </div>
+
                 <div class="todo-component">
                     <div class="todo-left-component">
                         <input type="checkbox" name="done" id="done">
