@@ -155,7 +155,13 @@
 
         deleteBtns.forEach(btn => {
             btn.addEventListener('click', function(){
+
+                const confirmed = confirm('Are you sure to delete ?');
+
+                if( confirmed){
+
                     this.parentElement.remove();
+                }
             });
         });
     });
