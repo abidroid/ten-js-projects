@@ -150,7 +150,14 @@
 
 
         todoSection.insertAdjacentHTML('beforeend', todoComponent);
-        
+
+        const deleteBtns = document.querySelectorAll('.btn-delete');
+
+        deleteBtns.forEach(btn => {
+            btn.addEventListener('click', function(){
+                    this.parentElement.remove();
+            });
+        });
     });
 </script>
 </html>
