@@ -129,7 +129,12 @@
 
     btnSave.addEventListener('click', function(){
 
-        const todoName = textField.value;
+        const todoName = textField.value.trim();
+
+        if( todoName === ""){
+            alert('Please enter a todo');
+            return;
+        }
 
         var todoComponent = `
         <div class="todo-component">
