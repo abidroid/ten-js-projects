@@ -129,6 +129,51 @@
     const btnSave = document.getElementById('btnSave');
     const todoSection = document.querySelector('.todos-container')
 
+
+    function createTodoElement(todoName){
+
+        // Main container
+        const todoDiv = document.createElement('div');
+        todoDiv.className = 'todo-component';
+
+        // Left section
+        const leftDiv = document.createElement('div');
+        leftDiv.className = 'todo-left-component';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = 'done';
+
+        const span = document.createElement('span');
+        span.className = 'todo-name';
+        span.textContent = todoName;
+
+        leftDiv.appendChild(checkbox);
+        leftDiv.appendChild(span);
+
+        // Delete button
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'btn-delete';
+        deleteBtn.textContent = 'Delete';
+
+        // write delete logic here
+
+        deleteBtn.addEventListener('click', function(){
+            const confirmed = confirm('Are you sure to delete ?');
+
+                if( confirmed){
+
+                    todoDiv.remove();
+                }
+        });
+
+        todoDiv.appendChild(leftDiv);
+        todoDiv.append(deleteBtn);
+
+        return todoDiv;
+    }
+
     btnSave.addEventListener('click', function(){
 
         const todoName = textField.value.trim();
@@ -138,34 +183,37 @@
             return;
         }
 
-        var todoComponent = `
-        <div class="todo-component">
-                    <div class="todo-left-component">
-                        <input type="checkbox" name="done" id="done">
-                        <span class="todo-name">${todoName}</span>
-                    </div>
 
-                    <button class="btn-delete">Delete</button>
+        const newTodoElement = createTodoElement(todoName);
 
-                </div>
-        `;
+        // var todoComponent = `
+        // <div class="todo-component">
+        //             <div class="todo-left-component">
+        //                 <input type="checkbox" name="done" id="done">
+        //                 <span class="todo-name">${todoName}</span>
+        //             </div>
+
+        //             <button class="btn-delete">Delete</button>
+
+        //         </div>
+        // `;
 
 
-        todoSection.insertAdjacentHTML('beforeend', todoComponent);
+        //todoSection.insertAdjacentHTML('beforeend', todoComponent);
 
-        const deleteBtns = document.querySelectorAll('.btn-delete');
+        // const deleteBtns = document.querySelectorAll('.btn-delete');
 
-        deleteBtns.forEach(btn => {
-            btn.addEventListener('click', function(){
+        // deleteBtns.forEach(btn => {
+        //     btn.addEventListener('click', function(){
 
-                const confirmed = confirm('Are you sure to delete ?');
+        //         const confirmed = confirm('Are you sure to delete ?');
 
-                if( confirmed){
+        //         if( confirmed){
 
-                    this.parentElement.remove();
-                }
-            });
-        });
+        //             this.parentElement.remove();
+        //         }
+        //     });
+        // });
     });
 </script>
 </html>
