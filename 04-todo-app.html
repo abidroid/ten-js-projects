@@ -144,6 +144,8 @@
         checkbox.type = 'checkbox';
         checkbox.name = 'done';
 
+        
+
         const span = document.createElement('span');
         span.className = 'todo-name';
         span.textContent = todoName;
@@ -168,6 +170,17 @@
                 }
         });
 
+
+        // ✅ Checkbox change event
+        checkbox.addEventListener('change', function(){
+            if( checkbox.checked){
+                span.style.textDecoration = 'line-through';
+            }else {
+                span.style.textDecoration = 'none';
+            }
+        });
+
+
         todoDiv.appendChild(leftDiv);
         todoDiv.append(deleteBtn);
 
@@ -187,7 +200,7 @@
         const newTodoElement = createTodoElement(todoName);
 
         todoSection.appendChild(newTodoElement);
-        textField.value = '';
+        //textField.value = '';
 
         // var todoComponent = `
         // <div class="todo-component">
