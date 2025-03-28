@@ -105,10 +105,11 @@
             return;
         }
 
-        const calculatedTipAmount = (billAmount * tipPercent / 100);
-        const totalBillAmount = billAmount + calculatedTipAmount;
+        const calculatedTipAmount = (decimalBillAmount * decimalTipPercent / 100);
+        const totalBillAmount = decimalBillAmount + calculatedTipAmount;
 
-        
+        paraTipAmount.innerText = `Tip: $${calculatedTipAmount}`;
+        paraTotalAmount.innerText = `Total: $${totalBillAmount}`;
 
     });
 
