@@ -91,7 +91,25 @@
         const billAmount = textFieldBillAmount.value.trim();
         const tipPercent = textFieldTipPercentage.value.trim();
 
-        alert(`${billAmount} ${tipPercent}`);
+
+        const decimalBillAmount = parseFloat(billAmount);
+        const decimalTipPercent = parseFloat(tipPercent);
+
+        if( isNaN(decimalBillAmount) || decimalBillAmount <= 0 ){
+            alert('Please provide a valid Bill Amount');
+            return;
+        }
+
+        if( isNaN(decimalTipPercent) || decimalTipPercent <= 0 ){
+            alert('Please provide a valid Tip Percentage');
+            return;
+        }
+
+        const calculatedTipAmount = (billAmount * tipPercent / 100);
+        const totalBillAmount = billAmount + calculatedTipAmount;
+
+        
+
     });
 
 </script>
