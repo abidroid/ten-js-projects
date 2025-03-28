@@ -47,18 +47,18 @@
             cursor: pointer;
             margin-top: 10px;
             border-radius: 5px;
-            
+
         }
 
         button:hover {
-    background-color: #45a049;
-}
+            background-color: #45a049;
+        }
 
-.result {
-    /* margin-top: 20px; */
-    font-size: 18px;
-    color: #333;
-}
+        .result {
+            /* margin-top: 20px; */
+            font-size: 18px;
+            color: #333;
+        }
     </style>
 </head>
 
@@ -79,5 +79,21 @@
         </div>
     </div>
 </body>
+
+<script>
+    const textFieldBillAmount = document.getElementById('billAmount');
+    const textFieldTipPercentage = document.getElementById('tipPercent');
+    const paraTipAmount = document.getElementById('tipAmount');
+    const paraTotalAmount = document.getElementById('totalAmount');
+
+    document.getElementById('btnCalculate').addEventListener('click', function () {
+
+        const billAmount = textFieldBillAmount.value.trim();
+        const tipPercent = textFieldTipPercentage.value.trim();
+
+        alert(`${billAmount} ${tipPercent}`);
+    });
+
+</script>
 
 </html>
